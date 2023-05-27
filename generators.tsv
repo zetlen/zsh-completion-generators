@@ -2,3 +2,4 @@ zellij	zellij setup --generate-completion zsh
 bw	bw completion --shell zsh
 rustup	rustup completions zsh rustup
 cargo	rustup completions zsh cargo
+gh	gh completion --shell zsh
