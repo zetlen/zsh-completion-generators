@@ -4,3 +4,4 @@ rustup	rustup completions zsh rustup
 cargo	rustup completions zsh cargo
 gh	gh completion --shell zsh
 mise	mise completion zsh
+starship	starship completions zsh
