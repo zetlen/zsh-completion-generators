@@ -7,3 +7,4 @@ gh	gh completion --shell zsh
 mise	mise completion zsh
 starship	starship completions zsh
 docker	docker completion zsh
+pnpm	pnpm completion zsh
