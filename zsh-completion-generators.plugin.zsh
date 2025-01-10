@@ -1,19 +1,35 @@
-local MY_DIR="${0:A:h}"
-local KNOWN_GENERATORS="${MY_DIR}/generators.tsv"
+__zcg_dir="${0:A:h}"
+__zcg_csv="${__zcg_dir}/generators.csv"
+__zcg_name="zsh-completion-generators"
+__zcg_line1=1
 
-while IFS=$'\t' read -r CLI PRINT_COMPLETION; do
+while IFS=$',' read -r cli print_cmd; do
+  # skip header row
+  if [[ _zcg_line1 == 1 ]]; then
+    __zcg_line1=0
+    continue
+  fi
 
-  local GENERATED_COMPLETION="${MY_DIR}/_${CLI}";
-
+  local generated="${__zcg_dir}/_${cli}";
+  
   # only for commands that are actually installed
-  command -v "$CLI" &> /dev/null || continue
+  command -v "$cli" &> /dev/null || continue
 
   # only if a completion doesn't already exist for it
-  [ -z "$_comps[$CLI]" ] || continue
+  [ -z "$_comps[$cli]" ] || continue
 
   # only if the file doesn't already exist
-  [ -f "$GENERATED_COMPLETION" ] && continue
+  [ -f "$generated" ] && continue
 
-  eval "$PRINT_COMPLETION" > "$GENERATED_COMPLETION"
-done < "$KNOWN_GENERATORS"
+  printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
+  eval "$print_cmd" > "$generated"
+  printf "Done.\n" >&2
 
+done < "$__zcg_csv"
+
+zsh-completion-generators-rebuild() {
+  rm -f ${__zcg_dir}/_*
+  echo "[$__zcg_name] Rebuilding all completions on next shell login. You may want to delete completion cache:" >&2
+  rm -ri ~/.zcompdump
+  echo "[$__zcg_name] Restart your shell to regenerate completions." >&2
+}
