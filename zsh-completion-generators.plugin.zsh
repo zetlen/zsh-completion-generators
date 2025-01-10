@@ -1,6 +1,5 @@
 __zcg_dir="${0:A:h}"
-__zcg_csv="${__zcg_dir}/generators.csv"
-__zcg_name="zsh-completion-generators"
+__zcg_name="${__zcg_dir:t}"
 __zcg_line1=1
 
 while IFS=$',' read -r cli print_cmd; do
@@ -11,7 +10,7 @@ while IFS=$',' read -r cli print_cmd; do
   fi
 
   local generated="${__zcg_dir}/_${cli}";
-  
+
   # only for commands that are actually installed
   command -v "$cli" &> /dev/null || continue
 
@@ -25,7 +24,7 @@ while IFS=$',' read -r cli print_cmd; do
   eval "$print_cmd" > "$generated"
   printf "Done.\n" >&2
 
-done < "$__zcg_csv"
+done < "${__zcg_dir}/generators.csv"
 
 zsh-completion-generators-rebuild() {
   rm -f ${__zcg_dir}/_*
