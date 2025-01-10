@@ -46,7 +46,7 @@ Initial load of your first new shell after install may take a while, since it ha
 
 ## Notes
 
-If you upgrade one of these tools and its completions change, this plugin won't know about it by default. The alias `zsh-completion-generators-rebuild <cli-name>` will rebuild completion for that command. Pass `--all` instead of a CLI name and it will delete and rebuild all of its completions.
+If you upgrade one of these tools and its completions change, this plugin won't know about it by default. The alias `zsh-completion-generators-rebuild` will manually delete all the generated completion files, and they will be regenerated on the next new shell.
 
 After changing any CLI completions, you'll always benefit from deleting `$HOME/.zcompdump` and/or `$HOME/.zcompcache/` before starting your first new shell.
 
