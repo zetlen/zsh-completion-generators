@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Exit on errors
+set -e
+
+CSV_FILE="generators.csv"
+MD_FILE="README.md"
+
+###############################################################################
+# 1) Build Markdown table from CSV
+###############################################################################
+
+# Extract the entire CSV into a variable so we can process it
+csv_data="$(cat "$CSV_FILE")"
+
+# Header is the first line
+header="$(printf '%s\n' "$csv_data" | head -n 1)"
+# Body is everything after the first line
+body="$(printf '%s\n' "$csv_data" | tail -n +2)"
+
+# Count the number of fields from the header
+num_fields="$(echo "$header" | awk -F',' '{print NF}')"
+
+# Build the table header row
+markdown_table="| $(echo "$header" | sed 's/,/ | /g') |"
+
+# Build the separator row (---) for each column
+separator="|"
+i=1
+while [ "$i" -le "$num_fields" ]; do
+  separator="$separator --- |"
+  i="$(expr "$i" + 1)"
+done
+
+# Combine header and separator
+markdown_table="$markdown_table
+$separator"
+
+# Append each row from the CSV body using a here-doc to avoid subshell issues
+while IFS= read -r line
+do
+  markdown_table="$markdown_table
+| \`$(echo "$line" | sed 's/,/` | `/g')\` |"
+done <<EOF
+$body
+EOF
+
+###############################################################################
+# 2) Inject the table into the Markdown file
+###############################################################################
+
+# Find line numbers for start and end delimiters
+start_line="$(grep -n "<!-- inject-markdown start -->" "$MD_FILE" | cut -d: -f1)"
+end_line="$(grep -n "<!-- inject-markdown end -->"   "$MD_FILE" | cut -d: -f1)"
+
+# If either delimiter is missing, bail out
+if [ -z "$start_line" ] || [ -z "$end_line" ]; then
+  echo "Error: Could not find both delimiters in $MD_FILE."
+  exit 1
+fi
+
+# Create a temporary file for the updated content
+TEMP_FILE="$(mktemp 2>/dev/null || mktemp -t csvinject)"
+
+# 1. Print everything from the start of the file up to (and including) the start delimiter.
+head -n "$start_line" "$MD_FILE" > "$TEMP_FILE"
+
+# 2. Append the generated table
+echo "$markdown_table" >> "$TEMP_FILE"
+
+# 3. Print everything from the end delimiter down to the end of the file (inclusive).
+tail -n +"$end_line" "$MD_FILE" >> "$TEMP_FILE"
+
+# Overwrite the original file
+mv "$TEMP_FILE" "$MD_FILE"
+
+echo "Replaced lines between inject-markdown start/end with CSV table."
+
+git add README.md

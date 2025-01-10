@@ -4,19 +4,20 @@ Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo genera
 
 This is a very simple ZSH plugin which has a table of tool names and the commands for outputting completion scripts for those tools. Currently known tools are:
 
-```csv
-cli,to generate completion
-zellij,zellij setup --generate-completion zsh
-bw,bw completion --shell zsh
-rustup,rustup completions zsh rustup
-cargo,rustup completions zsh cargo
-deno,deno completions zsh
-gh,gh completion --shell zsh
-mise,mise completion zsh
-starship,starship completions zsh
-docker,docker completion zsh
-pnpm,pnpm completion zsh
-```
+<!-- inject-markdown start -->
+| Tool | Command to generate completion |
+| --- | --- |
+| `zellij` | `zellij setup --generate-completion zsh` |
+| `bw` | `bw completion --shell zsh` |
+| `rustup` | `rustup completions zsh rustup` |
+| `cargo` | `rustup completions zsh cargo` |
+| `deno` | `deno completions zsh` |
+| `gh` | `gh completion --shell zsh` |
+| `mise` | `mise completion zsh` |
+| `starship` | `starship completions zsh` |
+| `docker` | `docker completion zsh` |
+| `pnpm` | `pnpm completion zsh` |
+<!-- inject-markdown end -->
 
 On every shell load, it will filter that list for tools that
 - you have installed (i.e. are on the `$PATH`)

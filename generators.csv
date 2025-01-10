@@ -1,4 +1,4 @@
-cli,completion generator
+Tool,Command to generate completion
 zellij,zellij setup --generate-completion zsh
 bw,bw completion --shell zsh
 rustup,rustup completions zsh rustup
