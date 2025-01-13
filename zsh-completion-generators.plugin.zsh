@@ -1,30 +1,24 @@
 __zcg_dir="${0:A:h}"
 __zcg_name="${__zcg_dir:t}"
-__zcg_line1=1
 
-while IFS=$',' read -r cli print_cmd; do
-  # skip header row
-  if [[ _zcg_line1 == 1 ]]; then
-    __zcg_line1=0
-    continue
-  fi
+tail -n +2 "${__zcg_dir}/generators.csv" | while IFS=$',' read -r cli print_cmd; do
 
   local generated="${__zcg_dir}/_${cli}";
 
-  # only for commands that are actually installed
-  command -v "$cli" &> /dev/null || continue
+  # find command executable
+  local cmd_path="$(command -v "$cli" | xargs type -p | xargs realpath 2> /dev/null)"
 
-  # only if a completion doesn't already exist for it
-  [ -z "$_comps[$cli]" ] || continue
+  # skip if command isn't installed
+  [[ -z "$cmd_path" ]] && continue
 
-  # only if the file doesn't already exist
-  [ -f "$generated" ] && continue
+  # skip if the generated completion is newer than the command executable
+  [[ "$generated" -nt "$cmd_path" ]] && continue
 
-  printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
-  eval "$print_cmd" > "$generated"
-  printf "Done.\n" >&2
+  #printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
+  eval "$print_cmd" 2>/dev/null > "$generated"
+  #printf "Done.\n" >&2
 
-done < "${__zcg_dir}/generators.csv"
+done
 
 zsh-completion-generators-rebuild() {
   rm -f ${__zcg_dir}/_*
