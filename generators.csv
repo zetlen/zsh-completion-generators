@@ -9,3 +9,5 @@ mise,mise completion zsh
 starship,starship completions zsh
 docker,docker completion zsh
 pnpm,pnpm completion zsh
+fly,fly completion zsh
+hugo,hugo completion zsh

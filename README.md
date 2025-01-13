@@ -17,6 +17,8 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `starship` | `starship completions zsh` |
 | `docker` | `docker completion zsh` |
 | `pnpm` | `pnpm completion zsh` |
+| `fly` | `fly completion zsh` |
+| `hugo` | `hugo completion zsh` |
 <!-- inject-markdown end -->
 
 On every shell load, it will filter that list for tools that
