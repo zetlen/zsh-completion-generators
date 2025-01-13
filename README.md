@@ -7,18 +7,18 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 <!-- inject-markdown start -->
 | Tool | Command to generate completion |
 | --- | --- |
-| `zellij` | `zellij setup --generate-completion zsh` |
 | `bw` | `bw completion --shell zsh` |
-| `rustup` | `rustup completions zsh rustup` |
 | `cargo` | `rustup completions zsh cargo` |
 | `deno` | `deno completions zsh` |
-| `gh` | `gh completion --shell zsh` |
-| `mise` | `mise completion zsh` |
-| `starship` | `starship completions zsh` |
 | `docker` | `docker completion zsh` |
-| `pnpm` | `pnpm completion zsh` |
 | `fly` | `fly completion zsh` |
+| `gh` | `gh completion --shell zsh` |
 | `hugo` | `hugo completion zsh` |
+| `mise` | `mise completion zsh` |
+| `pnpm` | `pnpm completion zsh` |
+| `rustup` | `rustup completions zsh rustup` |
+| `starship` | `starship completions zsh` |
+| `zellij` | `zellij setup --generate-completion zsh` |
 <!-- inject-markdown end -->
 
 On every shell load, it will filter that list for tools that

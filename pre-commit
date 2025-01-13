@@ -7,11 +7,18 @@ CSV_FILE="generators.csv"
 MD_FILE="README.md"
 
 ###############################################################################
-# 1) Build Markdown table from CSV
+# 1) Extract and alphabetize CSV
 ###############################################################################
 
-# Extract the entire CSV into a variable so we can process it
-csv_data="$(cat "$CSV_FILE")"
+csv_data="$(sort -h "$CSV_FILE")"
+
+# Alphabetize on disk in case it isn't anymore
+echo "$csv_data" > "$CSV_FILE"
+
+###############################################################################
+# 2) Build Markdown table from CSV
+###############################################################################
+
 
 # Header is the first line
 header="$(printf '%s\n' "$csv_data" | head -n 1)"
@@ -46,7 +53,7 @@ $body
 EOF
 
 ###############################################################################
-# 2) Inject the table into the Markdown file
+# 3) Inject the table into the Markdown file
 ###############################################################################
 
 # Find line numbers for start and end delimiters
@@ -74,6 +81,6 @@ tail -n +"$end_line" "$MD_FILE" >> "$TEMP_FILE"
 # Overwrite the original file
 mv "$TEMP_FILE" "$MD_FILE"
 
-echo "Replaced lines between inject-markdown start/end with CSV table."
+echo "Injected $CSV_FILE into $MD_FILE as markdown table."
 
-git add README.md
+git add "$MD_FILE" "$CSV_FILE"
