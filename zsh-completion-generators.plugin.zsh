@@ -14,9 +14,9 @@ tail -n +2 "${__zcg_dir}/generators.csv" | while IFS=$',' read -r cli print_cmd;
   # skip if the generated completion is newer than the command executable
   [[ "$generated" -nt "$cmd_path" ]] && continue
 
-  #printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
+  printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
   eval "$print_cmd" 2>/dev/null > "$generated"
-  #printf "Done.\n" >&2
+  printf "Done.\n" >&2
 
 done
 
