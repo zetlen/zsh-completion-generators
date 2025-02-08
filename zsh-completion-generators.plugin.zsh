@@ -11,8 +11,15 @@ tail -n +2 "${__zcg_dir}/generators.csv" | while IFS=$',' read -r cli print_cmd;
   # skip if command isn't installed
   [[ -z "$cmd_path" ]] && continue
 
-  # skip if the generated completion is newer than the command executable
-  [[ "$generated" -nt "$cmd_path" ]] && continue
+  local cmd_type="$(whence -w "$cmd_path" | cut -d' ' -f2)"
+
+  if [[ "$cmd_type" == "command" ]]; then
+    # we can check if the command is newer than the generated completion
+    [[ "$generated" -nt "$cmd_path" ]] && continue
+  else
+    # we can only check if the completion exists already
+    [[ -e "$generated" ]] && continue
+  fi
 
   printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
   eval "$print_cmd" 2>/dev/null > "$generated"
