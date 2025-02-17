@@ -16,6 +16,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `hugo` | `hugo completion zsh` |
 | `mise` | `mise completion zsh` |
 | `pnpm` | `pnpm completion zsh` |
+| `rbw` | `rbw gen-completions zsh` |
 | `rustup` | `rustup completions zsh rustup` |
 | `starship` | `starship completions zsh` |
 | `zellij` | `zellij setup --generate-completion zsh` |
