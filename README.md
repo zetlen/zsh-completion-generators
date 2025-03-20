@@ -14,6 +14,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `fly` | `fly completion zsh` |
 | `gh` | `gh completion --shell zsh` |
 | `hugo` | `hugo completion zsh` |
+| `jira` | `jira completion zsh` |
 | `mise` | `mise completion zsh` |
 | `pnpm` | `pnpm completion zsh` |
 | `rbw` | `rbw gen-completions zsh` |
