@@ -17,6 +17,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `jira` | `jira completion zsh` |
 | `mise` | `mise completion zsh` |
 | `pnpm` | `pnpm completion zsh` |
+| `pumas` | `pumas generate-completion zsh` |
 | `rbw` | `rbw gen-completions zsh` |
 | `rustup` | `rustup completions zsh rustup` |
 | `starship` | `starship completions zsh` |
