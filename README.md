@@ -16,6 +16,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `hugo` | `hugo completion zsh` |
 | `jira` | `jira completion zsh` |
 | `mise` | `mise completion zsh` |
+| `orbctl` | `orbctl completion zsh` |
 | `pnpm` | `pnpm completion zsh` |
 | `pumas` | `pumas generate-completion zsh` |
 | `rbw` | `rbw gen-completions zsh` |
