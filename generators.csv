@@ -3,6 +3,7 @@ bw,bw completion --shell zsh
 cargo,rustup completions zsh cargo
 deno,deno completions zsh
 docker,docker completion zsh
+fd,fd --gen-completions
 fly,fly completion zsh
 gh,gh completion --shell zsh
 hugo,hugo completion zsh

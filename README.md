@@ -11,6 +11,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `cargo` | `rustup completions zsh cargo` |
 | `deno` | `deno completions zsh` |
 | `docker` | `docker completion zsh` |
+| `fd` | `fd --gen-completions` |
 | `fly` | `fly completion zsh` |
 | `gh` | `gh completion --shell zsh` |
 | `hugo` | `hugo completion zsh` |
