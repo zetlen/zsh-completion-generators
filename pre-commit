@@ -6,24 +6,16 @@ set -e
 CSV_FILE="generators.csv"
 MD_FILE="README.md"
 
-###############################################################################
-# 1) Extract and alphabetize CSV
-###############################################################################
-
-csv_data="$(sort -h "$CSV_FILE")"
+header="$(head -n 1 "$CSV_FILE")"
+body="$(tail -n +2 "$CSV_FILE" | sort -h)"
 
 # Alphabetize on disk in case it isn't anymore
-echo "$csv_data" > "$CSV_FILE"
+echo "$header" > "$CSV_FILE"
+echo "$body" >> "$CSV_FILE"
 
 ###############################################################################
 # 2) Build Markdown table from CSV
 ###############################################################################
-
-
-# Header is the first line
-header="$(printf '%s\n' "$csv_data" | head -n 1)"
-# Body is everything after the first line
-body="$(printf '%s\n' "$csv_data" | tail -n +2)"
 
 # Count the number of fields from the header
 num_fields="$(echo "$header" | awk -F',' '{print NF}')"
