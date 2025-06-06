@@ -7,8 +7,10 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 <!-- inject-markdown start -->
 | Tool | Command to generate completion |
 | --- | --- |
+| `bk` | `bk completion zsh` |
 | `bw` | `bw completion --shell zsh` |
 | `cargo` | `rustup completions zsh cargo` |
+| `chronoctl` | `chronoctl completion zsh` |
 | `deno` | `deno completions zsh` |
 | `docker` | `docker completion zsh` |
 | `fd` | `fd --gen-completions` |
@@ -23,6 +25,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `rbw` | `rbw gen-completions zsh` |
 | `rustup` | `rustup completions zsh rustup` |
 | `starship` | `starship completions zsh` |
+| `uv` | `uv generate-shell-completion zsh` |
 | `zellij` | `zellij setup --generate-completion zsh` |
 <!-- inject-markdown end -->
 
