@@ -16,6 +16,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `fd` | `fd --gen-completions` |
 | `fly` | `fly completion zsh` |
 | `gh` | `gh completion --shell zsh` |
+| `gt` | `gt completion` |
 | `hugo` | `hugo completion zsh` |
 | `jira` | `jira completion zsh` |
 | `mise` | `mise completion zsh` |
