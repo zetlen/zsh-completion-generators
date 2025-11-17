@@ -7,6 +7,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 <!-- inject-markdown start -->
 | Tool | Command to generate completion |
 | --- | --- |
+| `atuin` | `atuin gen-completions --shell zsh` |
 | `bk` | `bk completion zsh` |
 | `bw` | `bw completion --shell zsh` |
 | `cargo` | `rustup completions zsh cargo` |

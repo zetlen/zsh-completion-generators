@@ -1,4 +1,5 @@
 Tool,Command to generate completion
+atuin,atuin gen-completions --shell zsh
 bk,bk completion zsh
 bw,bw completion --shell zsh
 cargo,rustup completions zsh cargo
