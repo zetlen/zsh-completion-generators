@@ -86,9 +86,26 @@ Initial load of your first new shell after install may take a while, since it ha
 
 ## Notes
 
-If you upgrade one of these tools and its completions change, this plugin won't know about it by default. The alias `zsh-completion-generators-rebuild` will manually delete all the generated completion files, and they will be regenerated on the next new shell.
+**Automatic regeneration on upgrade:** When you upgrade a tool, this plugin automatically detects the newer binary and regenerates completions on the next shell load. The `zsh-completion-generators-rebuild` command is only needed if completions become corrupted or you want to force regeneration of all completions.
 
-After changing any CLI completions, you'll always benefit from deleting `$HOME/.zcompdump` and/or `$HOME/.zcompcache/` before starting your first new shell.
+After regenerating completions, you may need to delete `$HOME/.zcompdump` and/or `$HOME/.zcompcache/` for changes to take effect.
 
 Some CLIs don't have `completion` commands that output shell scripts to stdout. Sometimes they want to automatically update your `.zshrc`, or place special configuration files elsewhere. **This plugin is not compatible with those approaches**.
+
+## Custom generators
+
+You can add your own tool definitions without modifying this plugin by creating a user-local CSV file:
+
+```
+~/.config/zsh-completion-generators/generators.csv
+```
+
+Use the same format as the main `generators.csv`:
+
+```csv
+Tool,Command to generate completion
+mytool,mytool completions zsh
+```
+
+This file will survive plugin updates.
 
