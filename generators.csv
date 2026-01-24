@@ -1,23 +1,51 @@
 Tool,Command to generate completion
+argocd,argocd completion zsh
 atuin,atuin gen-completions --shell zsh
 bk,bk completion zsh
+buf,buf completion zsh
 bw,bw completion --shell zsh
 cargo,rustup completions zsh cargo
+chezmoi,chezmoi completion zsh
 chronoctl,chronoctl completion zsh
+colima,colima completion zsh
 deno,deno completions zsh
 docker,docker completion zsh
+doctl,doctl completion zsh
+eksctl,eksctl completion zsh
 fd,fd --gen-completions
 fly,fly completion zsh
 gh,gh completion --shell zsh
+glab,glab completion -s zsh
+golangci-lint,golangci-lint completion zsh
+goreleaser,goreleaser completion zsh
 gt,gt completion
+hcloud,hcloud completion zsh
+helm,helm completion zsh
 hugo,hugo completion zsh
 jira,jira completion zsh
+just,just --completions zsh
+k9s,k9s completion zsh
+kind,kind completion zsh
+kubectl,kubectl completion zsh
+minikube,minikube completion zsh
 mise,mise completion zsh
+nerdctl,nerdctl completion zsh
+op,op completion zsh
 orbctl,orbctl completion zsh
+pdm,pdm completion zsh
+pixi,pixi completion --shell zsh
 pnpm,pnpm completion zsh
+podman,podman completion zsh
+poetry,poetry completions zsh
+pulumi,pulumi gen-completion zsh
 pumas,pumas generate-completion zsh
 rbw,rbw gen-completions zsh
+rclone,rclone genautocomplete zsh -
+restic,restic generate --zsh-completion -
 rustup,rustup completions zsh rustup
+rye,rye self completion -s zsh
 starship,starship completions zsh
+stern,stern --completion zsh
+task,task --completion zsh
 uv,uv generate-shell-completion zsh
 zellij,zellij setup --generate-completion zsh
