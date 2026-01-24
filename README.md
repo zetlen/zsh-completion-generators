@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![48 tools supported](https://img.shields.io/badge/tools%20supported-48-blue)
+![50 tools supported](https://img.shields.io/badge/tools%20supported-50-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
