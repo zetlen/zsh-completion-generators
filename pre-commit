@@ -13,6 +13,25 @@ body="$(tail -n +2 "$CSV_FILE" | sort -h)"
 echo "$header" > "$CSV_FILE"
 echo "$body" >> "$CSV_FILE"
 
+# Count tools (non-empty lines in body)
+tool_count="$(echo "$body" | grep -c .)"
+
+###############################################################################
+# 1) Update badge count
+###############################################################################
+
+badge_start="$(grep -n "<!-- inject-badge start -->" "$MD_FILE" | cut -d: -f1)"
+badge_end="$(grep -n "<!-- inject-badge end -->" "$MD_FILE" | cut -d: -f1)"
+
+if [ -n "$badge_start" ] && [ -n "$badge_end" ]; then
+  badge_line="![${tool_count} tools supported](https://img.shields.io/badge/tools%20supported-${tool_count}-blue)"
+  TEMP_FILE="$(mktemp 2>/dev/null || mktemp -t badgeinject)"
+  head -n "$badge_start" "$MD_FILE" > "$TEMP_FILE"
+  echo "$badge_line" >> "$TEMP_FILE"
+  tail -n +"$badge_end" "$MD_FILE" >> "$TEMP_FILE"
+  mv "$TEMP_FILE" "$MD_FILE"
+fi
+
 ###############################################################################
 # 2) Build Markdown table from CSV
 ###############################################################################
@@ -73,6 +92,6 @@ tail -n +"$end_line" "$MD_FILE" >> "$TEMP_FILE"
 # Overwrite the original file
 mv "$TEMP_FILE" "$MD_FILE"
 
-echo "Injected $CSV_FILE into $MD_FILE as markdown table."
+echo "Updated $MD_FILE: ${tool_count} tools, badge and table injected."
 
 git add "$MD_FILE" "$CSV_FILE"
