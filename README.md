@@ -19,6 +19,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `cargo` | `rustup completions zsh cargo` |
 | `chezmoi` | `chezmoi completion zsh` |
 | `chronoctl` | `chronoctl completion zsh` |
+| `codex` | `codex completion zsh` |
 | `colima` | `colima completion zsh` |
 | `deno` | `deno completions zsh` |
 | `docker` | `docker completion zsh` |
@@ -60,6 +61,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `stern` | `stern --completion zsh` |
 | `task` | `task --completion zsh` |
 | `uv` | `uv generate-shell-completion zsh` |
+| `yq` | `yq completion zsh` |
 | `zellij` | `zellij setup --generate-completion zsh` |
 <!-- inject-markdown end -->
 

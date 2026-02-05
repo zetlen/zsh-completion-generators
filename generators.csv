@@ -7,6 +7,7 @@ bw,bw completion --shell zsh
 cargo,rustup completions zsh cargo
 chezmoi,chezmoi completion zsh
 chronoctl,chronoctl completion zsh
+codex,codex completion zsh
 colima,colima completion zsh
 deno,deno completions zsh
 docker,docker completion zsh
@@ -48,4 +49,5 @@ starship,starship completions zsh
 stern,stern --completion zsh
 task,task --completion zsh
 uv,uv generate-shell-completion zsh
+yq,yq completion zsh
 zellij,zellij setup --generate-completion zsh
