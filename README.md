@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![50 tools supported](https://img.shields.io/badge/tools%20supported-50-blue)
+![53 tools supported](https://img.shields.io/badge/tools%20supported-53-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
@@ -55,6 +55,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `rbw` | `rbw gen-completions zsh` |
 | `rclone` | `rclone genautocomplete zsh -` |
 | `restic` | `restic generate --zsh-completion -` |
+| `rg` | `rg --generate=complete-zsh` |
 | `rustup` | `rustup completions zsh rustup` |
 | `rye` | `rye self completion -s zsh` |
 | `starship` | `starship completions zsh` |

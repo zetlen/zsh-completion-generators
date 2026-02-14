@@ -43,6 +43,7 @@ pumas,pumas generate-completion zsh
 rbw,rbw gen-completions zsh
 rclone,rclone genautocomplete zsh -
 restic,restic generate --zsh-completion -
+rg,rg --generate=complete-zsh
 rustup,rustup completions zsh rustup
 rye,rye self completion -s zsh
 starship,starship completions zsh
