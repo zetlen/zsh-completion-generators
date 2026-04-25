@@ -22,6 +22,7 @@ goreleaser,goreleaser completion zsh
 gt,gt completion
 hcloud,hcloud completion zsh
 helm,helm completion zsh
+hf,hf --show-completion
 hugo,hugo completion zsh
 jira,jira completion zsh
 just,just --completions zsh

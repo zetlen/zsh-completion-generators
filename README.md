@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![54 tools supported](https://img.shields.io/badge/tools%20supported-54-blue)
+![55 tools supported](https://img.shields.io/badge/tools%20supported-55-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
@@ -34,6 +34,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `gt` | `gt completion` |
 | `hcloud` | `hcloud completion zsh` |
 | `helm` | `helm completion zsh` |
+| `hf` | `hf --show-completion` |
 | `hugo` | `hugo completion zsh` |
 | `jira` | `jira completion zsh` |
 | `just` | `just --completions zsh` |
