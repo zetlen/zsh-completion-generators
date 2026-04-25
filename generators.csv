@@ -32,6 +32,7 @@ minikube,minikube completion zsh
 mise,mise completion zsh
 nerdctl,nerdctl completion zsh
 op,op completion zsh
+opencode,opencode completion zsh
 orbctl,orbctl completion zsh
 pdm,pdm completion zsh
 pixi,pixi completion --shell zsh

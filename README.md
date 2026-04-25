@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![50 tools supported](https://img.shields.io/badge/tools%20supported-50-blue)
+![53 tools supported](https://img.shields.io/badge/tools%20supported-53-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
@@ -44,6 +44,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `mise` | `mise completion zsh` |
 | `nerdctl` | `nerdctl completion zsh` |
 | `op` | `op completion zsh` |
+| `opencode` | `opencode completion zsh` |
 | `orbctl` | `orbctl completion zsh` |
 | `pdm` | `pdm completion zsh` |
 | `pixi` | `pixi completion --shell zsh` |
