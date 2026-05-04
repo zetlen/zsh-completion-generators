@@ -1,4 +1,5 @@
 Tool,Command to generate completion
+acli,acli completion zsh
 argocd,argocd completion zsh
 atuin,atuin gen-completions --shell zsh
 bk,bk completion zsh
