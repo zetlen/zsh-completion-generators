@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![55 tools supported](https://img.shields.io/badge/tools%20supported-55-blue)
+![56 tools supported](https://img.shields.io/badge/tools%20supported-56-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
@@ -64,6 +64,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `stern` | `stern --completion zsh` |
 | `task` | `task --completion zsh` |
 | `uv` | `uv generate-shell-completion zsh` |
+| `wt` | `wt config shell init zsh` |
 | `yq` | `yq completion zsh` |
 | `zellij` | `zellij setup --generate-completion zsh` |
 <!-- inject-markdown end -->
