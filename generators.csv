@@ -53,5 +53,6 @@ starship,starship completions zsh
 stern,stern --completion zsh
 task,task --completion zsh
 uv,uv generate-shell-completion zsh
+wt,wt config shell init zsh
 yq,yq completion zsh
 zellij,zellij setup --generate-completion zsh
