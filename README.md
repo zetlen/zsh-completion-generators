@@ -65,7 +65,6 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `stern` | `stern --completion zsh` |
 | `task` | `task --completion zsh` |
 | `uv` | `uv generate-shell-completion zsh` |
-| `wt` | `wt config shell init zsh` |
 | `yq` | `yq completion zsh` |
 | `zellij` | `zellij setup --generate-completion zsh` |
 <!-- inject-markdown end -->
