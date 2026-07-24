@@ -18,6 +18,7 @@ fd,fd --gen-completions
 fly,fly completion zsh
 gh,gh completion --shell zsh
 glab,glab completion -s zsh
+glow,glow completion zsh
 golangci-lint,golangci-lint completion zsh
 goreleaser,goreleaser completion zsh
 gt,gt completion
