@@ -12,21 +12,14 @@ __zcg_process_generators() {
 
     local generated="${__zcg_dir}/_${cli}";
 
-    # find command executable
-    local cmd_path="$(whence -S "$cli" | cut -d'>' -f2 | xargs echo)"
+    # find command executable with all symlink hops resolved (:A = realpath)
+    local cmd_path="${commands[$cli]:A}"
 
     # skip if command isn't installed
     [[ -z "$cmd_path" ]] && continue
 
-    local cmd_type="$(whence -w "$cmd_path" | cut -d' ' -f2)"
-
-    if [[ "$cmd_type" == "command" ]]; then
-      # we can check if the command is newer than the generated completion
-      [[ "$generated" -nt "$cmd_path" ]] && continue
-    else
-      # we can only check if the completion exists already
-      [[ -e "$generated" ]] && continue
-    fi
+    # skip if the generated completion is newer than the command
+    [[ "$generated" -nt "$cmd_path" ]] && continue
 
     printf "[%s] Generating completion for %s..." $__zcg_name $cli >&2
     eval "$print_cmd" 2>/dev/null > "$generated"
