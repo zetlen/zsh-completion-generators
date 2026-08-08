@@ -2,6 +2,7 @@ Tool,Command to generate completion
 acli,acli completion zsh
 argocd,argocd completion zsh
 atuin,atuin gen-completions --shell zsh
+bat,bat --completion zsh
 bk,bk completion zsh
 buf,buf completion zsh
 bw,bw completion --shell zsh
