@@ -1,7 +1,7 @@
 # zsh-completion-generators
 
 <!-- inject-badge start -->
-![58 tools supported](https://img.shields.io/badge/tools%20supported-58-blue)
+![59 tools supported](https://img.shields.io/badge/tools%20supported-59-blue)
 <!-- inject-badge end -->
 
 Problem: You have a new CLI tool `foo`, and it has a subcommand like `foo generate-completions --shell=zsh`. But you don't know where to put its output--or you _think_ you know, but it doesn't seem to work.
@@ -14,6 +14,7 @@ This is a very simple ZSH plugin which has a table of tool names and the command
 | `acli` | `acli completion zsh` |
 | `argocd` | `argocd completion zsh` |
 | `atuin` | `atuin gen-completions --shell zsh` |
+| `bat` | `bat --completion zsh` |
 | `bk` | `bk completion zsh` |
 | `buf` | `buf completion zsh` |
 | `bw` | `bw completion --shell zsh` |
