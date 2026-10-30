@@ -7,6 +7,7 @@ bk,bk completion zsh
 buf,buf completion zsh
 bw,bw completion --shell zsh
 cargo,rustup completions zsh cargo
+cf,cf complete zsh
 chezmoi,chezmoi completion zsh
 chronoctl,chronoctl completion zsh
 codex,codex completion zsh
